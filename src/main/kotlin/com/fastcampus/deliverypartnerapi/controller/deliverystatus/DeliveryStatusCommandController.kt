@@ -53,6 +53,7 @@ class DeliveryStatusCommandController(
                 command.deliveryRequestId,
                 deliveryPartnerId = command.deliveryPartnerId
             )
+
             else -> {
                 error("알 수 없는 배달 진행 상태입니다. $command")
             }

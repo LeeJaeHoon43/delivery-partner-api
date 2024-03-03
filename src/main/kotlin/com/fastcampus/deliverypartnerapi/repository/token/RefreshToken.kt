@@ -10,6 +10,7 @@ import jakarta.persistence.Table
 @Entity
 @Table(name = "refresh_tokens", schema = "food_delivery")
 class RefreshToken(
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "refresh_token_id")

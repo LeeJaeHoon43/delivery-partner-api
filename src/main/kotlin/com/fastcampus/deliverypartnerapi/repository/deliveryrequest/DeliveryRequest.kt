@@ -15,6 +15,7 @@ import java.math.BigDecimal
 @Entity
 @Table(name = "delivery_requests", schema = "delivery_partner")
 data class DeliveryRequest(
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "delivery_request_id")
@@ -47,4 +48,5 @@ data class DeliveryRequest(
 
     @Column(name = "delivery_fee")
     val deliveryFee: BigDecimal,
+
 ): BaseEntity()

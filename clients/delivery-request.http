@@ -1,5 +1,5 @@
 ### 배달 요청 목록
-GET http://localhost:30001/apis/delivery-requests?deliveryPartnerId=4
+GET http://localhost:30001/apis/delivery-requests?deliveryPartnerId=1
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXNpYUBzdXNpYS5jb20iLCJpYXQiOjE3MDIyMDk1NTcsImV4cCI6MTcwMjIxMzE1N30.tpY4MSXlSzvRFdoRPncGUiwGBpofh5ibaCY1SL7GBgc
 
 ### 배달 요청 상세

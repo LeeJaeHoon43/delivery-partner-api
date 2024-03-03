@@ -5,6 +5,8 @@ import com.fastcampus.deliverypartnerapi.repository.deliveryrequest.DeliveryRequ
 import com.fastcampus.deliverypartnerapi.repository.deliveryrequest.DeliveryRequestRepository
 import com.navercorp.fixturemonkey.FixtureMonkey
 import com.navercorp.fixturemonkey.api.introspector.ConstructorPropertiesArbitraryIntrospector
+import com.navercorp.fixturemonkey.kotlin.giveMeBuilder
+import com.navercorp.fixturemonkey.kotlin.set
 import org.junit.jupiter.api.Assertions.assertDoesNotThrow
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -33,12 +35,16 @@ class DeliveryRequestCommandServiceTest {
         // given
         val deliveryRequestId = 1L
         val deliveryPartnerId = 2L
+
         val fixtureMonkey = FixtureMonkey.builder()
             .objectIntrospector(ConstructorPropertiesArbitraryIntrospector.INSTANCE)
             .build()
 
         Mockito.`when`(repository.findById(deliveryRequestId)).thenReturn(
-            Optional.of(createDeliveryRequest(deliveryRequestId))
+            Optional.of(fixtureMonkey.giveMeBuilder<DeliveryRequest>()
+                    .set(DeliveryRequest::deliveryRequestId, deliveryRequestId)
+                    .sample()
+            )
         )
 
         // when
